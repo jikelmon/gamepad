@@ -449,7 +449,7 @@ GAMEPAD_BOOL GamepadIsConnected(GAMEPAD_DEVICE device) {
 }
 
 GAMEPAD_BOOL GamepadButtonDown(GAMEPAD_DEVICE device, GAMEPAD_BUTTON button) {
-	return (STATE[device].bCurrent & BUTTON_TO_FLAG(button)) != 0 ? GAMEPAD_TRUE : GAMEPAD_FALSE;
+	return ((STATE[device].bCurrent & BUTTON_TO_FLAG(button)) == BUTTON_TO_FLAG(button)) ? GAMEPAD_TRUE : GAMEPAD_FALSE;
 }
 
 GAMEPAD_BOOL GamepadButtonTriggered(GAMEPAD_DEVICE device, GAMEPAD_BUTTON button) {
