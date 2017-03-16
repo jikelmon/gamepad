@@ -166,7 +166,7 @@ static void GamepadAddDevice(const char* devPath) {
 	}
 
 	/* reset device state */
-	GamepadResetState(i);
+	GamepadResetState((GAMEPAD_DEVICE)i);
 
 	/* attempt to open the device in read-write mode, which we need fo rumble */
 	STATE[i].fd = open(STATE[i].device, O_RDWR|O_NONBLOCK);
